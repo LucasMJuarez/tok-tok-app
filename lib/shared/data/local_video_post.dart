@@ -17,18 +17,18 @@ List<Map<String, dynamic>> videoPosts = [
     'likes': 21564320,
     'views': 123563,
   },
-  // {
-  //   'name': '¿Esto es trigo? que interesante',
-  //   'videoUrl': 'assets/videos/4.mp4',
-  //   'likes': 320,
-  //   'views': 2300,
-  // },
-  // {
-  //   'name': 'El COVID no me afecta',
-  //   'videoUrl': 'assets/videos/5.mp4',
-  //   'likes': 3230,
-  //   'views': 31030,
-  // },
+  {
+    'name': '¿Esto es trigo? que interesante',
+    'videoUrl': 'assets/videos/4.mp4',
+    'likes': 320,
+    'views': 2300,
+  },
+  {
+    'name': 'El COVID no me afecta',
+    'videoUrl': 'assets/videos/5.mp4',
+    'likes': 3230,
+    'views': 31030,
+  },
   // {
   //   'name': 'No quiero ir a trabajar hoy señor Stark',
   //   'videoUrl': 'assets/videos/6.mp4',
