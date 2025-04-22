@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toktok/config/theme/app_theme.dart';
+import 'package:toktok/presentation/screens/discover/discover_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,10 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'TokTok',
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Material App Bar')),
-        body: const Center(child: Text('Hello World')),
-      ),
+      home: DiscoverScreen(),
     );
   }
 }
