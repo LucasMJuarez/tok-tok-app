@@ -33,9 +33,14 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
     super.dispose();
     controller.dispose();
   }
-}
 
-@override
-Widget build(BuildContext context) {
-  return Container();
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: controller.initialize(),
+      builder: (context, snapshot) {
+        return const Center(child: CircularProgressIndicator(strokeWidth: 2));
+      },
+    );
+  }
 }
