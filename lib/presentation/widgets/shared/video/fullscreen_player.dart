@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
-class FullscreenPlayer extends StatelessWidget {
+class FullscreenPlayer extends StatefulWidget {
   final String videoUrl;
   final String caption;
 
@@ -11,7 +12,30 @@ class FullscreenPlayer extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Container();
+  State<FullscreenPlayer> createState() => _FullscreenPlayerState();
+}
+
+class _FullscreenPlayerState extends State<FullscreenPlayer> {
+  late VideoPlayerController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        VideoPlayerController.asset(widget.videoUrl)
+          ..setVolume(0)
+          ..setLooping(true)
+          ..play();
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
+}
+
+@override
+Widget build(BuildContext context) {
+  return Container();
 }
