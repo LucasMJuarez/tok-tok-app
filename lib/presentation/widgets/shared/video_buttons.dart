@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:toktok/config/helpers/human_formats.dart';
 import 'package:toktok/domain/entities/video_post.dart';
@@ -15,10 +16,20 @@ class VideoButtons extends StatelessWidget {
           iconColor: Colors.red,
           iconData: Icons.favorite,
         ),
+        const SizedBox(height: 15),
         _CustomIconButton(
           value: video.views,
           iconData: Icons.remove_red_eye_outlined,
         ),
+        const SizedBox(height: 15),
+
+        SpinPerfect(
+          child: _CustomIconButton(
+            value: video.views,
+            iconData: Icons.play_circle_outline,
+          ),
+        ),
+        const SizedBox(height: 15),
       ],
     );
   }
@@ -40,8 +51,8 @@ class _CustomIconButton extends StatelessWidget {
     return Column(
       children: [
         IconButton(onPressed: () {}, icon: Icon(iconData, color: color)),
-
-        Text(HumanFormats.humanReadeableNumber(value.toDouble())),
+        if (value > 0)
+          Text(HumanFormats.humanReadeableNumber(value.toDouble())),
       ],
     );
   }
