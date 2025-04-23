@@ -15,10 +15,18 @@ class VideoButtons extends StatelessWidget {
           iconColor: Colors.red,
           iconData: Icons.favorite,
         ),
+        const SizedBox(height: 15),
         _CustomIconButton(
           value: video.views,
           iconData: Icons.remove_red_eye_outlined,
         ),
+        const SizedBox(height: 15),
+
+        _CustomIconButton(
+          value: video.views,
+          iconData: Icons.play_circle_outline,
+        ),
+        const SizedBox(height: 15),
       ],
     );
   }
@@ -40,8 +48,8 @@ class _CustomIconButton extends StatelessWidget {
     return Column(
       children: [
         IconButton(onPressed: () {}, icon: Icon(iconData, color: color)),
-
-        Text(HumanFormats.humanReadeableNumber(value.toDouble())),
+        if (value > 0)
+          Text(HumanFormats.humanReadeableNumber(value.toDouble())),
       ],
     );
   }
