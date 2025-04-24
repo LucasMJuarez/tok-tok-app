@@ -3,7 +3,7 @@ import 'package:toktok/domain/entities/video_post.dart';
 import 'package:toktok/infrastructure/models/local_video_model.dart';
 import 'package:toktok/shared/data/local_video_post.dart';
 
-class LocalVideoDatasource implements VideoPostDatasource {
+class LocalVideoDatasourceImpl implements VideoPostDatasource {
   @override
   Future<List<VideoPost>> getFavoriteVideosByUser(String userId) async {
     return [];

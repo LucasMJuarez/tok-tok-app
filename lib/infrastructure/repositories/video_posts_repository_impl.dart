@@ -2,11 +2,11 @@ import 'package:toktok/domain/datasources/video_posts_datasource.dart';
 import 'package:toktok/domain/entities/video_post.dart';
 import 'package:toktok/domain/repositories/video_posts_repository.dart';
 
-class VideoPostsRepository implements VideoPostRepository {
+class VideoPostsRepositoryImpl implements VideoPostRepository {
   final VideoPostDatasource
   videoDatasource; //necesito un origen de la fuente de datos, cualquiera sea
 
-  VideoPostsRepository({required this.videoDatasource});
+  VideoPostsRepositoryImpl({required this.videoDatasource});
 
   @override
   Future<List<VideoPost>> getFavoriteVideosByUser(String userID) {
